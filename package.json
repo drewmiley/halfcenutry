@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "nlp": "node app.js",
+    "nlp": "node nlp/index.js",
     "app": "webpack-dev-server --config webpack.config.js",
     "server": "node server/main.js"
   },
