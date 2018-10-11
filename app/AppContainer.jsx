@@ -18,7 +18,7 @@ export default class App extends Component {
                 clickMe={this.props.fetchNumber}
             />
             <NumeralDisplay
-                number={this.props.number}
+                number={this.props.numbers[this.props.numbers.length - 1]}
             />
         </div>
     }

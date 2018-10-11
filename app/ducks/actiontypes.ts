@@ -1,1 +1,1 @@
-export const SET_NUMBER: string = 'SET_NUMBER';
+export const ADD_NUMBER: string = 'ADD_NUMBER';

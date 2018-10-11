@@ -6,7 +6,7 @@ import reducer from './reducer';
 export default function configureStore() {
     return createStore(
         reducer,
-        { number: 0 },
+        { numbers: [0] },
         applyMiddleware(thunk)
     );
 }

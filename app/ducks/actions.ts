@@ -10,7 +10,7 @@ export const mapDispatchToProps = (dispatch: Function) => {
 function changeNumber() {
     return (dispatch: Function) => {
         const number = Math.floor(100 * Math.random());
-        dispatch(setNumber(number));
+        dispatch(addNumber(number));
     }
 }
 
@@ -28,14 +28,14 @@ function fetchNumberFromServer() {
                 console.log(obj.answer);
                 return obj.number;
             })
-            .then(number => dispatch(setNumber(number)))
+            .then(number => dispatch(addNumber(number)))
             .catch(() => console.log('Server failed!!!'));
     };
 }
 
-function setNumber(number: number) {
+function addNumber(number: number) {
     return {
-        type: actiontypes.SET_NUMBER,
+        type: actiontypes.ADD_NUMBER,
         number
     }
 }
