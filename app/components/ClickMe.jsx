@@ -12,7 +12,12 @@ export default class ClickMe extends Component {
     }
     render() {
         return <div>
-            <button type='button' onClick={(e) => this.clickMe()}>Click Me</button>
+            <button
+                type='button'
+                onClick={(e) => this.clickMe()}
+            >
+                {this.props.info}
+            </button>
         </div>
     }
 };

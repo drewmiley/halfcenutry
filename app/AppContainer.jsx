@@ -14,6 +14,7 @@ export default class App extends Component {
     render() {
         return <div>
             <ClickMe
+                info={'Frontend'}
                 clickMe={this.props.changeNumber}
             />
             <NumeralDisplay
