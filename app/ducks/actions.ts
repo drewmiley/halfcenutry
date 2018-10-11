@@ -2,13 +2,14 @@ import * as actiontypes from './actiontypes';
 
 export const mapDispatchToProps = (dispatch: Function) => {
     return {
-        changeNumber: (number: number) => dispatch(changeNumber(number)),
+        changeNumber: () => dispatch(changeNumber()),
         fetchNumber: () => dispatch(fetchNumberFromServer())
     };
 };
 
-function changeNumber(number: number) {
+function changeNumber() {
     return (dispatch: Function) => {
+        const number = Math.floor(100 * Math.random());
         dispatch(setNumber(number));
     }
 }

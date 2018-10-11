@@ -7,15 +7,15 @@ import ClickMe from './components/ClickMe';
 import NumeralDisplay from './components/NumeralDisplay';
 
 export default class App extends Component {
-    componentDidMount() {
-        this.props.fetchNumber();
-    }
-
     render() {
         return <div>
             <ClickMe
                 info={'Frontend'}
                 clickMe={this.props.changeNumber}
+            />
+            <ClickMe
+                info={'Backend'}
+                clickMe={this.props.fetchNumber}
             />
             <NumeralDisplay
                 number={this.props.number}

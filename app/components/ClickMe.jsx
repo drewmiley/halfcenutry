@@ -8,7 +8,7 @@ export default class ClickMe extends Component {
         };
     }
     clickMe() {
-        this.props.clickMe(Math.floor(100 * Math.random()));
+        this.props.clickMe();
     }
     render() {
         return <div>
