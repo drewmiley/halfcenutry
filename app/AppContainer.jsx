@@ -7,6 +7,7 @@ import NumeralDisplay from './components/NumeralDisplay';
 
 export default class App extends Component {
     componentDidMount() {
+        console.log(this.props);
         this.props.fetchNumber();
     }
 

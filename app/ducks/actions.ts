@@ -6,8 +6,10 @@ export const mapDispatchToProps = (dispatch: Function) => {
 
 function fetchNumberFromServer() {
     return (dispatch: Function) => {
+        console.log("Running 1");
         fetch('http://localhost:8000/api')
             .then(response => {
+                console.log("Running 2");
                 if (!response.ok) {
                     throw Error(response.statusText);
                 }
@@ -20,6 +22,7 @@ function fetchNumberFromServer() {
 }
 
 function setNumber(number: number) {
+    console.log("Running 3");
     return {
         type: actiontypes.SET_NUMBER,
         number
