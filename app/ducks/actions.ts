@@ -24,7 +24,10 @@ function fetchNumberFromServer() {
                 return response;
             })
             .then(response => response.json())
-            .then(obj => obj.number)
+            .then(obj => {
+                console.log(obj.answer);
+                return obj.number;
+            })
             .then(number => dispatch(setNumber(number)))
             .catch(() => console.log('Server failed!!!'));
     };

@@ -21,9 +21,14 @@ router.use((req, res, next) => {
 const nlpManager = require('./nlp');
 
 router.get('/', (req, res) => {
-	nlpManager.process('en', 'I have to go').then(console.log);
-	const number = Math.floor(100 * Math.random());
-	res.json({ number });
+	nlpManager.process('en', 'I have to go').then(nlpRes => {
+		const number = Math.floor(100 * Math.random());
+		// console.log(nlpRes);
+		res.json({
+			number,
+			answer: nlpRes.answer
+		});
+	});
 });
 
 // START THE SERVER
