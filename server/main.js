@@ -17,7 +17,11 @@ router.use((req, res, next) => {
 	next();
 });
 
+//Load NLP
+const nlpManager = require('./nlp');
+
 router.get('/', (req, res) => {
+	nlpManager.process('en', 'I have to go').then(console.log);
 	const number = Math.floor(100 * Math.random());
 	res.json({ number });
 });
