@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { mapDispatchToProps } from './ducks/actions';
 
+import ClickMe from './components/ClickMe';
 import NumeralDisplay from './components/NumeralDisplay';
 
 export default class App extends Component {
@@ -14,6 +15,9 @@ export default class App extends Component {
     render() {
         console.log(this.props);
         return <div>
+            <ClickMe
+                clickMe={this.props.changeNumber}
+            />
             <NumeralDisplay
                 number={this.props.number}
             />

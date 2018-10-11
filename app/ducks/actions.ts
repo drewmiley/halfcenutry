@@ -1,15 +1,22 @@
 import * as actiontypes from './actiontypes';
 
 export const mapDispatchToProps = (dispatch: Function) => {
-    return { fetchNumber: () => dispatch(fetchNumberFromServer()) };
+    return {
+        changeNumber: (number: number) => dispatch(changeNumber(number)),
+        fetchNumber: () => dispatch(fetchNumberFromServer())
+    };
 };
+
+function changeNumber(number: number) {
+    return (dispatch: Function) => {
+        dispatch(setNumber(number));
+    }
+}
 
 function fetchNumberFromServer() {
     return (dispatch: Function) => {
-        console.log("Running 1");
         fetch('http://localhost:8000/api')
             .then(response => {
-                console.log("Running 2");
                 if (!response.ok) {
                     throw Error(response.statusText);
                 }
@@ -22,7 +29,6 @@ function fetchNumberFromServer() {
 }
 
 function setNumber(number: number) {
-    console.log("Running 3");
     return {
         type: actiontypes.SET_NUMBER,
         number
