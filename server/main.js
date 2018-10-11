@@ -18,7 +18,8 @@ router.use((req, res, next) => {
 });
 
 router.get('/', (req, res) => {
-	res.json({ message: 'hooray! welcome to our api!' });
+	const number = Math.floor(100 * Math.random());
+	res.json({ number });
 });
 
 // START THE SERVER
