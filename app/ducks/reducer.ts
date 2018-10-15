@@ -1,7 +1,7 @@
 import * as actiontypes from './actiontypes';
 
-const addNumber = (state: any, number: number) => {
-    return Object.assign({}, { numbers: state.numbers.concat([number]) });
+const addJoke = (state: any, number: number) => {
+    return Object.assign({}, { jokes: state.jokes.concat([number]) });
 }
 
 interface Action {
@@ -12,7 +12,7 @@ interface Action {
 export default function(state = {}, action: Action) {
     switch (action.type) {
         case actiontypes.ADD_JOKE:
-            return addNumber(state, action.number);
+            return addJoke(state, action.number);
         default:
             return state;
     }

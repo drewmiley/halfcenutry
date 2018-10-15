@@ -19,10 +19,10 @@ export default class App extends Component {
                 clickMe={this.props.fetchNumber}
             />
             <NumeralDisplay
-                number={this.props.numbers[this.props.numbers.length - 1]}
+                number={this.props.jokes[this.props.jokes.length - 1]}
             />
             <JokeHistory
-                values={this.props.numbers}
+                values={this.props.jokes}
             />
         </div>
     }
