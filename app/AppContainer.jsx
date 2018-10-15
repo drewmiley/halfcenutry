@@ -19,6 +19,7 @@ export default class App extends Component {
                 clickMe={this.props.fetchJokeFromServer}
             />
             <SendMessage
+                sendMessage={this.props.fetchJokeFromServer}
             />
             <JokeHistory
                 values={this.props.jokes}

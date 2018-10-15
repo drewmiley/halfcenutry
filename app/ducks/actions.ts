@@ -3,7 +3,7 @@ import * as actiontypes from './actiontypes';
 export const mapDispatchToProps = (dispatch: Function) => {
     return {
         getStaticJoke: () => dispatch(getStaticJoke()),
-        fetchJokeFromServer: () => dispatch(fetchJokeFromServer())
+        fetchJokeFromServer: (input: string) => dispatch(fetchJokeFromServer(input))
     };
 };
 
@@ -14,13 +14,14 @@ function getStaticJoke() {
     }
 }
 
-function fetchJokeFromServer() {
+function fetchJokeFromServer(input: string) {
     return (dispatch: Function) => {
-        fetch('http://localhost:8000/api')
+        fetch(`http://localhost:8000/api/${ input }`)
             .then(response => {
                 if (!response.ok) {
                     throw Error(response.statusText);
                 }
+                console.log(input);
                 return response;
             })
             .then(response => response.json())
