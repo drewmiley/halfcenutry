@@ -18,7 +18,7 @@ export default class JokeHistory extends Component {
             <tbody>
                 {this.props.values.map((value, i) =>
                     <tr key={`jokes-${ i }`}>
-                        <td>{value}</td>
+                        <td>{ value }</td>
                     </tr>
                 )}
             </tbody>
