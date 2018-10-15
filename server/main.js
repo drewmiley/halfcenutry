@@ -22,10 +22,8 @@ const nlpManager = require('./nlp');
 
 router.get('/', (req, res) => {
 	nlpManager.process('en', 'I have to go').then(nlpRes => {
-		const number = Math.floor(100 * Math.random());
 		// console.log(nlpRes);
 		res.json({
-			number,
 			answer: nlpRes.answer
 		});
 	});

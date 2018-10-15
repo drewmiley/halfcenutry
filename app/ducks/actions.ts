@@ -10,7 +10,7 @@ export const mapDispatchToProps = (dispatch: Function) => {
 function getStaticJoke() {
     return (dispatch: Function) => {
         const number = Math.floor(100 * Math.random());
-        dispatch(addJoke(number));
+        dispatch(addJoke(number + ''));
     }
 }
 
@@ -24,18 +24,15 @@ function fetchJokeFromServer() {
                 return response;
             })
             .then(response => response.json())
-            .then(obj => {
-                console.log(obj.answer);
-                return obj.number;
-            })
-            .then(number => dispatch(addJoke(number)))
+            .then(obj => obj.answer)
+            .then(joke => dispatch(addJoke(joke)))
             .catch(() => console.log('Server failed!!!'));
     };
 }
 
-function addJoke(number: number) {
+function addJoke(joke: string) {
     return {
         type: actiontypes.ADD_JOKE,
-        number
+        joke
     }
 }
