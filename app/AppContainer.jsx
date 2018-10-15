@@ -5,7 +5,7 @@ import { mapDispatchToProps } from './ducks/actions';
 
 import ClickMe from './components/ClickMe';
 import NumeralDisplay from './components/NumeralDisplay';
-import NumberHistory from './components/NumberHistory';
+import JokeHistory from './components/JokeHistory';
 
 export default class App extends Component {
     render() {
@@ -21,7 +21,7 @@ export default class App extends Component {
             <NumeralDisplay
                 number={this.props.numbers[this.props.numbers.length - 1]}
             />
-            <NumberHistory
+            <JokeHistory
                 values={this.props.numbers}
             />
         </div>

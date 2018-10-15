@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class NumberHistory extends Component {
+export default class JokeHistory extends Component {
     constructor(props) {
         super(props);
         this.shouldComponentUpdate = function(nextProps, nextState) {
