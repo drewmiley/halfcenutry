@@ -9,8 +9,17 @@ export default class NumberHistory extends Component {
     }
     render() {
         console.log(this.props.values);
-        return <div>
-            <span>{this.props.values.length}</span>
-        </div>
+        return <table id='jokes'>
+            <thead>
+                <tr>
+                    <th>{this.props.values.length}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{this.props.values.length}</td>
+                </tr>
+            </tbody>
+        </table>
     }
 };
