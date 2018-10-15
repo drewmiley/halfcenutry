@@ -20,7 +20,8 @@ router.use((req, res, next) => {
 //Load NLP
 const nlpManager = require('./nlp');
 
-router.get('/', (req, res) => {
+router.get('/:input', (req, res) => {
+	console.log(req.params.input);
 	nlpManager.process('en', 'I have to go').then(nlpRes => {
 		// console.log(nlpRes);
 		res.json({

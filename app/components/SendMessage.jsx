@@ -13,10 +13,13 @@ export default class SendMessage extends Component {
         this.setState({ input: e.target.value });
     }
 
-    onClick() {
-        const input = this.state.input
-        this.setState({ input: '' });
-        this.props.sendMessage(input);
+    onClick(input) {
+        if (input) {
+            this.setState({ input: '' });
+            this.props.getNLPJoke(input);
+        } else {
+            this.props.getRandomJoke();
+        }
     }
 
     render() {
@@ -29,9 +32,15 @@ export default class SendMessage extends Component {
             />
             <button
                 type='button'
+                onClick={(e) => this.onClick(this.state.input)}
+            >
+                NLP
+            </button>
+            <button
+                type='button'
                 onClick={(e) => this.onClick()}
             >
-                Click
+                Random
             </button>
         </div>
     }
