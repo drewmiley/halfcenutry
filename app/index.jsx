@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 
 import { AppContainer } from './AppContainer';
 
+import './style.css';
+
 import configureStore from './ducks/store';
 
 ReactDOM.render(
