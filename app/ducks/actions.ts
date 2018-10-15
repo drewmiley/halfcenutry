@@ -1,4 +1,5 @@
 import * as actiontypes from './actiontypes';
+import jokes from './jokes';
 
 export const mapDispatchToProps = (dispatch: Function) => {
     return {
@@ -9,8 +10,9 @@ export const mapDispatchToProps = (dispatch: Function) => {
 
 function getStaticJoke() {
     return (dispatch: Function) => {
-        const number = Math.floor(100 * Math.random());
-        dispatch(addJoke(number + ''));
+        const index = Math.floor(jokes.length * Math.random());
+        const joke = jokes[index];
+        dispatch(addJoke(joke));
     }
 }
 
