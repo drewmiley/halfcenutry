@@ -12,13 +12,15 @@ export default class NumberHistory extends Component {
         return <table id='jokes'>
             <thead>
                 <tr>
-                    <th>{this.props.values.length}</th>
+                    <th>Jokes</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>{this.props.values.length}</td>
-                </tr>
+                {this.props.values.map((value, i) =>
+                    <tr key={`jokes-${ i }`}>
+                        <td>{value}</td>
+                    </tr>
+                )}
             </tbody>
         </table>
     }
