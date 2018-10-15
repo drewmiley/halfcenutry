@@ -35,7 +35,7 @@ function fetchNumberFromServer() {
 
 function addNumber(number: number) {
     return {
-        type: actiontypes.ADD_NUMBER,
+        type: actiontypes.ADD_JOKE,
         number
     }
 }

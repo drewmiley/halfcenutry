@@ -11,7 +11,7 @@ interface Action {
 
 export default function(state = {}, action: Action) {
     switch (action.type) {
-        case actiontypes.ADD_NUMBER:
+        case actiontypes.ADD_JOKE:
             return addNumber(state, action.number);
         default:
             return state;

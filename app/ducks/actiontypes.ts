@@ -1,1 +1,1 @@
-export const ADD_NUMBER: string = 'ADD_NUMBER';
+export const ADD_JOKE: string = 'ADD_JOKE';
