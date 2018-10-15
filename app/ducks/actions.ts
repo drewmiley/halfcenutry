@@ -2,12 +2,12 @@ import * as actiontypes from './actiontypes';
 
 export const mapDispatchToProps = (dispatch: Function) => {
     return {
-        changeNumber: () => dispatch(changeNumber()),
+        changeNumber: () => dispatch(getStaticJoke()),
         fetchNumber: () => dispatch(fetchJokeFromServer())
     };
 };
 
-function changeNumber() {
+function getStaticJoke() {
     return (dispatch: Function) => {
         const number = Math.floor(100 * Math.random());
         dispatch(addJoke(number));
