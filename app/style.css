@@ -24,3 +24,8 @@
     background-color: #4CAF50;
     color: white;
 }
+
+#messageInput {
+    width: 400px;
+    height: 50px;
+}

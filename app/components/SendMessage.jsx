@@ -25,6 +25,7 @@ export default class SendMessage extends Component {
     render() {
         return <div>
             <input
+                id='messageInput'
                 value={this.state.input}
                 onKeyUp={(e) => {if (e.keyCode === 13) { this.onClick(); }}}
                 onChange={(e) => {this.handleInput(e)}}
