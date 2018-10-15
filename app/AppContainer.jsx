@@ -5,6 +5,7 @@ import { mapDispatchToProps } from './ducks/actions';
 
 import ClickMe from './components/ClickMe';
 import JokeHistory from './components/JokeHistory';
+import SendMessage from './components/SendMessage';
 
 export default class App extends Component {
     render() {
@@ -16,6 +17,8 @@ export default class App extends Component {
             <ClickMe
                 info={'Backend'}
                 clickMe={this.props.fetchJokeFromServer}
+            />
+            <SendMessage
             />
             <JokeHistory
                 values={this.props.jokes}
