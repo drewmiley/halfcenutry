@@ -2,8 +2,8 @@ import * as actiontypes from './actiontypes';
 
 export const mapDispatchToProps = (dispatch: Function) => {
     return {
-        changeNumber: () => dispatch(getStaticJoke()),
-        fetchNumber: () => dispatch(fetchJokeFromServer())
+        getStaticJoke: () => dispatch(getStaticJoke()),
+        fetchJokeFromServer: () => dispatch(fetchJokeFromServer())
     };
 };
 

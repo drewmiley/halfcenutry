@@ -12,11 +12,11 @@ export default class App extends Component {
         return <div>
             <ClickMe
                 info={'Frontend'}
-                clickMe={this.props.changeNumber}
+                clickMe={this.props.getStaticJoke}
             />
             <ClickMe
                 info={'Backend'}
-                clickMe={this.props.fetchNumber}
+                clickMe={this.props.fetchJokeFromServer}
             />
             <NumeralDisplay
                 number={this.props.jokes[this.props.jokes.length - 1]}
