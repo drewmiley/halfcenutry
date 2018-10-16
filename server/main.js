@@ -21,13 +21,16 @@ router.use((req, res, next) => {
 const nlpManager = require('./nlp');
 
 router.get('/:input', (req, res) => {
-	console.log(req.params.input);
-	nlpManager.process('en', 'I have to go').then(nlpRes => {
+	nlpManager.process('en', req.params.input).then(nlpRes => {
 		// console.log(nlpRes);
 		res.json({
 			answer: nlpRes.answer
 		});
 	});
+	nlpManager.addDocument('en', req.params.input, `greetings.${ req.params.input.replace(/\s+/g, '') }`);
+	nlpManager.addAnswer('en', `greetings.${ req.params.input.replace(/\s+/g, '') }`, `${ req.params.input } is a joke`);
+	nlpManager.train();
+	nlpManager.save();
 });
 
 // START THE SERVER

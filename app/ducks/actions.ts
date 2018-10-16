@@ -23,7 +23,6 @@ function fetchJokeFromServer(input: string) {
                 if (!response.ok) {
                     throw Error(response.statusText);
                 }
-                console.log(input);
                 return response;
             })
             .then(response => response.json())
